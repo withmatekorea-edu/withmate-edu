@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Withmate Edu | 1:1 Korean Lessons</title>
+  <meta name="description" content="Withmate Edu - Personalized Korean lessons, interview coaching, resume review and career preparation in Korea.">
+
+  <!-- Social sharing preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Withmate Edu | 1:1 Korean Lessons">
+  <meta property="og:description" content="韓語一對一課程・韓國面試準備・履歷修改。Learn Korean with Withmate Edu.">
+  <meta property="og:url" content="https://withmatekorea-edu.github.io/withmate-edu/">
+  <meta property="og:site_name" content="Withmate Edu">
+  <meta property="og:image" content="https://withmatekorea-edu.github.io/withmate-edu/preview.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Withmate Edu | Korean Lessons">
+  <meta name="twitter:description" content="Personalized 1:1 Korean lessons and career coaching.">
+  <meta name="theme-color" content="#1054ac">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Microsoft JhengHei", sans-serif;
+      color: #15315c;
+      background: linear-gradient(145deg,#eaf4ff,#f8fbff);
+      min-height: 100vh;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #123c81;
+      letter-spacing: -1px;
+    }
+
+    .logo span { color: #1986e5; }
+
+    .languages {
+      display: flex;
+      gap: 7px;
+    }
+
+    .languages button {
+      padding: 9px 12px;
+      background: white;
+      border: 1px solid #d5e4f4;
+      border-radius: 30px;
+      color: #17376b;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .languages button.active {
+      background: #1054ac;
+      color: white;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 45px auto 65px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #dcecff;
+      border-radius: 30px;
+      color: #1154a3;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      margin: 28px auto 20px;
+      font-size: clamp(34px,6vw,57px);
+      line-height: 1.25;
+      color: #103578;
+      letter-spacing: -1px;
+    }
+
+    .intro {
+      max-width: 670px;
+      margin: 0 auto;
+      color: #60758f;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .actions { margin-top: 32px; }
+
+    .primary {
+      display: inline-block;
+      padding: 17px 42px;
+      border-radius: 13px;
+      background: linear-gradient(100deg,#0872d7,#103c88);
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: bold;
+      box-shadow: 0 12px 28px #1054ac30;
+    }
+
+    .primary:hover { opacity: .9; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 18px;
+      margin-top: 65px;
+      text-align: left;
+    }
+
+    .service {
+      background: white;
+      border: 1px solid #e2ebf6;
+      border-radius: 19px;
+      padding: 27px;
+      box-shadow: 0 10px 30px #18417b0a;
+    }
+
+    .icon { font-size: 29px; }
+
+    .service h2 {
+      font-size: 18px;
+      margin: 15px 0 9px;
+    }
+
+    .service p {
+      color: #72839b;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .note {
+      margin: 35px auto 0;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #59728e;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      color: #8394aa;
+      font-size: 12px;
+    }
+
+    @media(max-width:650px) {
+      header { padding: 20px 15px; }
+      .logo { font-size: 20px; }
+      .languages button { padding: 8px; }
+      main { margin-top: 25px; }
+      .intro { font-size: 15px; }
+      .services { grid-template-columns: 1fr; }
+      .service { padding: 23px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Withmate <span>Edu</span></div>
+  <div class="languages">
+    <button id="ko" onclick="setLang('ko')">한국어</button>
+    <button id="zh" onclick="setLang('zh')">繁體中文</button>
+    <button id="en" onclick="setLang('en')">English</button>
+  </div>
+</header>
+
+<main>
+  <div class="eyebrow">WITHMATE EDU · 1:1 KOREAN LESSON</div>
+
+  <h1 id="headline"></h1>
+  <p class="intro" id="intro"></p>
+
+  <div class="actions">
+    <a class="primary" id="bookingButton"
+       href="#" target="_blank" rel="noopener noreferrer"></a>
+  </div>
+
+  <div class="services">
+    <div class="service">
+      <div class="icon">🎓</div>
+      <h2 id="s1"></h2>
+      <p id="d1"></p>
+    </div>
+
+    <div class="service">
+      <div class="icon">💼</div>
+      <h2 id="s2"></h2>
+      <p id="d2"></p>
+    </div>
+
+    <div class="service">
+      <div class="icon">📄</div>
+      <h2 id="s3"></h2>
+      <p id="d3"></p>
+    </div>
+
+    <div class="service">
+      <div class="icon">🌏</div>
+      <h2 id="s4"></h2>
+      <p id="d4"></p>
+    </div>
+  </div>
+
+  <div class="note" id="note"></div>
+</main>
+
+<footer>© 2026 Withmate Edu · Personalized Korean Learning</footer>
+
+<script>
+  // 여기에 기존 Google Apps Script 웹 앱 /exec 주소 입력
+  const BOOKING_URL = '여기에_예약_웹앱_URL';
+
+  const content = {
+    ko: {
+      headline: '한국어부터 한국 취업 준비까지',
+      intro: '당신의 목표에 맞춘 1:1 한국어 수업. 회화, TOPIK, 면접 준비, 이력서 첨삭까지 Withmate Edu와 함께하세요.',
+      button: '수업 예약하기',
+      services: [
+        ['1:1 한국어 수업','중급·고급 회화 및 TOPIK 준비'],
+        ['취업 면접 코칭','한국 기업 면접 및 모의 면접'],
+        ['이력서 첨삭','한국어 이력서와 자기소개서'],
+        ['한국 취업 준비','취업 계획과 진로 상담']
+      ],
+      note: '50분 개인 수업 · 온라인 Zoom · 한국 시간 기준'
+    },
+    zh: {
+      headline: '從韓語學習到韓國就業準備',
+      intro: '依照你的目標量身打造一對一韓語課程。從韓語會話、TOPIK 到韓國面試與履歷修改，Withmate Edu 陪你一起準備。',
+      button: '立即預約課程',
+      services: [
+        ['一對一韓語課程','中高級會話與 TOPIK 準備'],
+        ['韓國求職面試','面試技巧與模擬面試'],
+        ['韓文履歷修改','履歷與自我介紹優化'],
+        ['韓國就業準備','求職規劃與職涯諮詢']
+      ],
+      note: '50分鐘一對一課程 · Zoom 線上教學 · 韓國時間'
+    },
+    en: {
+      headline: 'Learn Korean. Prepare for Your Future.',
+      intro: 'Personalized Korean lessons designed around your goals. Improve your Korean, prepare for interviews, and take the next step toward your career in Korea.',
+      button: 'Book Your Lesson',
+      services: [
+        ['Private Korean Lessons','Intermediate, advanced and TOPIK'],
+        ['Interview Coaching','Korean job interviews and practice'],
+        ['Resume & CV Review','Korean resumes and personal statements'],
+        ['Career Preparation','Job search planning and guidance']
+      ],
+      note: '50-minute private lessons · Online via Zoom · Korea Standard Time'
+    }
+  };
+
+  function setLang(lang) {
+    const t = content[lang];
+    document.documentElement.lang =
+      lang === 'zh' ? 'zh-Hant' : lang;
+
+    document.getElementById('headline').textContent = t.headline;
+    document.getElementById('intro').textContent = t.intro;
+    document.getElementById('bookingButton').textContent = t.button;
+    document.getElementById('note').textContent = t.note;
+
+    t.services.forEach((item, i) => {
+      document.getElementById('s' + (i+1)).textContent = item[0];
+      document.getElementById('d' + (i+1)).textContent = item[1];
+    });
+
+    ['ko','zh','en'].forEach(code => {
+      document.getElementById(code).classList.toggle(
+        'active', code === lang
+      );
+    });
+  }
+
+  const bookingButton = document.getElementById('bookingButton');
+
+  if (BOOKING_URL.startsWith('https://script.google.com/')) {
+    bookingButton.href = BOOKING_URL;
+  } else {
+    bookingButton.href = '#';
+    bookingButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      alert('Booking link is not configured yet.');
+    });
+  }
+
+  setLang('zh');
+</script>
+
+</body>
+</html>
