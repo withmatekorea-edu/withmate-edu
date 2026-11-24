@@ -243,6 +243,7 @@
       .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
   .languages .vietnamese-link { display:inline-block; padding:8px 12px; color:#10449a; font-weight:700; white-space:nowrap; }
+  #externalBooking[hidden] { display: none; }
 </style>
 </head>
 
@@ -280,6 +281,7 @@
       id="bookingButton"
       href="https://script.google.com/macros/s/AKfycbyuP9Zv2ELRhVcEVxaYm8t10zLlZ1objQNH4VrvfzFcoMQiTl0xUFORWhR0krCNe_At7w/exec"
     >Book a lesson</a>
+    <a class="secondary" id="externalBooking" hidden></a>
     <a class="secondary" id="inquiryButton" href="#consult"></a>
   </div>
 
@@ -492,6 +494,24 @@
     ['course','format','people','location','schedule','details'].forEach((id,i)=>document.getElementById(id+'Label').textContent=t.fields[i]);
     ['course','format'].forEach((id,i)=>{const select=document.getElementById(id);const prior=select.selectedIndex;select.replaceChildren(...(i?t.formats:t.courses).map(v=>{const o=document.createElement('option');o.textContent=v;return o;}));if(prior>=0)select.selectedIndex=prior;});
     document.getElementById('copyButton').textContent=t.copy;
+    const externalBooking = document.getElementById('externalBooking');
+    if (/Android/i.test(navigator.userAgent)) {
+      const booking = new URL(document.getElementById('bookingButton').href);
+      const browser = /SamsungBrowser/i.test(navigator.userAgent)
+        ? 'com.sec.android.app.sbrowser'
+        : 'com.android.chrome';
+      externalBooking.href = 'intent://' + booking.host + booking.pathname + booking.search +
+        '#Intent;scheme=https;action=android.intent.action.VIEW;package=' + browser +
+        ';S.browser_fallback_url=' + encodeURIComponent(booking.href) + ';end';
+      externalBooking.textContent = ({
+        ko: '브라우저 앱에서 예약 열기',
+        zh: '在瀏覽器開啟預約',
+        'zh-Hans': '在浏览器打开预约',
+        en: 'Open booking in browser'
+      })[lang];
+      externalBooking.hidden = false;
+    }
+
     const bottom=document.getElementById('bottomBooking');bottom.href=document.getElementById('bookingButton').href;bottom.textContent=t.button;
 
 
