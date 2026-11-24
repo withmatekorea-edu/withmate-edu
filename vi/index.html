@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f3e8">
+  <meta name="description" content="Lớp tiếng Hàn giao tiếp cho người mới bắt đầu. Học nhóm 4–6 người qua Zoom. Học thử miễn phí 25 phút.">
+  <title>Tiếng Hàn giao tiếp cho người mới bắt đầu | Withmate Edu</title>
+  <link rel="icon" href="../icon-192.png">
+  <link rel="apple-touch-icon" href="../icon-180.png">
+  <style>
+    * { box-sizing: border-box }
+    body { margin: 0; background: #f8f3e8; color: #163d31; font: 1rem/1.6 system-ui, sans-serif }
+    header, main, footer { max-width: 62rem; margin: auto; padding: 0 1.25rem }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1rem; border-bottom: 1px solid #d6dacc }
+    a { color: inherit }
+    .brand { font-weight: 800; text-decoration: none }
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 2rem; padding-block: 3rem }
+    h1, h2, p { margin: 0 0 .85rem }
+    h1 { font: bold clamp(2.4rem, 6vw, 4.5rem)/1.03 Georgia, serif; letter-spacing: -.035em }
+    h2 { line-height: 1.25 }
+    .offer, .trial { border-radius: 1.25rem; padding: 1.4rem; background: #173f33; color: #fff9ed }
+    .badge { display: inline-block; background: #ffd6a8; color: #5a2a0d; border-radius: 2rem; padding: .25rem .75rem; font-size: .875rem; font-weight: 750 }
+    .price { display: block; margin-top: .4rem; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.14 }
+    .details { margin: 1rem 0 0; padding-left: 1.15rem }
+    .button { display: inline-block; padding: .65rem 1rem; border-radius: .65rem; border: 1px solid #173f33; background: #173f33; color: white; font: inherit; font-weight: 750; text-decoration: none; cursor: pointer }
+    .benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem }
+    .benefits article { background: #fffaf1; border: 1px solid #dddccf; border-radius: 1rem; padding: 1.25rem }
+    .trial { background: #e7eee4; color: #163d31; margin: 1.5rem 0 }
+    label { display: block; font-weight: 650; margin: .65rem 0 .25rem }
+    input, textarea { width: 100%; max-width: 34rem; display: block; border: 1px solid #587065; border-radius: .5rem; padding: .6rem .75rem; background: white; color: #163d31; font: inherit }
+    form button { margin-top: .85rem }
+    #status:not(:empty) { margin-top: .75rem }
+    footer { padding-block: 1rem 2rem }
+    @media (max-width: 42rem) { .hero, .benefits { grid-template-columns: 1fr; gap: 1rem } .hero { padding-block: 1.65rem } }
+  </style>
+</head>
+<body>
+  <header><a class="brand" href="../">WITHMATE EDU</a><a href="../">Trang chủ</a></header>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div>
+        <h1 id="title">Tiếng Hàn giao tiếp</h1>
+        <p><strong>Dành cho người mới bắt đầu.</strong> Tập nói những câu bạn có thể dùng ngay ở trường, ký túc xá, cửa hàng và quán ăn.</p>
+        <a class="button" href="#hoc-thu">Học thử miễn phí 25 phút</a>
+      </div>
+      <div class="offer">
+        <span class="badge">Ưu đãi riêng cho khóa đầu tiên</span>
+        <strong class="price">49.000 ₩</strong>
+        <div>mỗi người / 4 buổi · 12.250 ₩ mỗi buổi</div>
+        <ul class="details">
+          <li>4–6 học viên mỗi lớp</li>
+          <li>1 buổi mỗi tuần trong 4 tuần</li>
+          <li>Học qua Zoom bằng điện thoại hoặc máy tính</li>
+        </ul>
+      </div>
+    </section>
+    <section class="benefits" aria-label="Bạn sẽ học gì">
+      <article>
+        <h2>Dùng được trong cuộc sống</h2>
+        <p>Học bằng hình ảnh, luyện phát âm và đóng vai trong các tình huống thực tế. Bạn có thể tham gia ngay cả khi chưa biết tiếng Hàn.</p>
+      </article>
+      <article>
+        <h2>Chuẩn bị đi làm tại Hàn Quốc</h2>
+        <p>Withmate Edu cũng hỗ trợ luyện tiếng Hàn khi đi làm thêm, giới thiệu bản thân và luyện phỏng vấn khi bạn muốn xin việc tại Hàn Quốc.</p>
+      </article>
+    </section>
+    <p>Thầy Jun từng du học ở Trung Quốc và có hơn 8 năm kinh nghiệm với hơn 5.000 buổi dạy tiếng Hàn.</p>
+    <section class="trial" id="hoc-thu">
+      <h2>Học thử miễn phí 25 phút</h2>
+      <p>Soạn tin nhắn rồi gửi cho người đã giới thiệu lớp để hỏi lịch học thử qua Zoom.</p>
+      <form id="trial-form">
+        <label for="name">Tên của bạn</label>
+        <input id="name" autocomplete="name" maxlength="80" required>
+        <label for="time">Ngày hoặc giờ bạn có thể tham gia</label>
+        <input id="time" maxlength="120" required placeholder="Ví dụ: Thứ Ba sau 19:00">
+        <button class="button" type="submit">Soạn tin nhắn học thử</button>
+      </form>
+      <div id="message-area" hidden>
+        <label for="message">Tin nhắn gửi cho người giới thiệu</label>
+        <textarea id="message" rows="5" readonly></textarea>
+        <button type="button" class="button" id="copy">Sao chép tin nhắn</button>
+      </div>
+      <p id="status" role="status"></p>
+    </section>
+  </main>
+  <footer>Withmate Edu</footer>
+  <script>
+    const form = document.querySelector('#trial-form');
+    const message = document.querySelector('#message');
+    const status = document.querySelector('#status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.querySelector('#name').value.trim();
+      const time = document.querySelector('#time').value.trim();
+      if (!name || !time) {
+        status.textContent = 'Vui lòng nhập tên và thời gian bạn có thể tham gia.';
+        return;
+      }
+      message.value = `Xin chào! Mình muốn tham gia buổi học thử tiếng Hàn miễn phí 25 phút của Withmate Edu.\nTên: ${name}\nThời gian mình có thể tham gia: ${time}`;
+      document.querySelector('#message-area').hidden = false;
+      status.textContent = 'Hãy gửi tin nhắn này cho người đã giới thiệu lớp.';
+      message.focus();
+    });
+    document.querySelector('#copy').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(message.value);
+        status.textContent = 'Đã sao chép. Bạn có thể dán tin nhắn vào ứng dụng nhắn tin.';
+      } catch {
+        message.focus();
+        message.select();
+        status.textContent = 'Hãy nhấn giữ vào tin nhắn để sao chép.';
+      }
+    });
+  </script>
+</body>
+</html>
