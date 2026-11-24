@@ -527,6 +527,16 @@
     });
   }
 
+  const isHomeScreenApp = window.matchMedia('(display-mode: standalone)').matches ||
+    window.navigator.standalone === true;
+  if (isHomeScreenApp) {
+    for (const id of ['bookingButton', 'bottomBooking']) {
+      const link = document.getElementById(id);
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    }
+  }
+
   let activeLang = 'zh';
   document.getElementById('inquiryForm').addEventListener('submit',async e=>{
     e.preventDefault();const t=content[activeLang];
