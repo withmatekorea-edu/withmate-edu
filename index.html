@@ -370,6 +370,11 @@
 </form></section>
 <div class="actions"><a class="primary" id="bottomBooking" href="https://script.google.com/macros/s/AKfycbyuP9Zv2ELRhVcEVxaYm8t10zLlZ1objQNH4VrvfzFcoMQiTl0xUFORWhR0krCNe_At7w/exec">Book a lesson</a><a class="secondary" id="bottomInquiry" href="#consult"></a></div>
 
+<details style="max-width:680px;margin:24px auto;text-align:left">
+  <summary id="home-guide-title"></summary>
+  <ol><li id="home-guide-android"></li><li id="home-guide-ios"></li></ol>
+  <a id="home-guide-pdf" hidden></a>
+</details>
 </main>
 
 <footer>
@@ -479,7 +484,16 @@
     });
   }
 
+  const homeGuide = {"ko":["휴대폰 홈 화면에 추가","갤럭시 · Android — Chrome에서 에듀 메인 열기 → ⋮ → 홈 화면에 추가","아이폰 · iPhone — Safari에서 에듀 메인 열기 → 공유 → 홈 화면에 추가"],"en":["Add Withmate Edu to your home screen","Android — Open Withmate Edu in Chrome → ⋮ → Add to home screen","iPhone — Open Withmate Edu in Safari → Share → Add to Home Screen","Download the illustrated guide (PDF)","home-guide-en.pdf"],"zh":["把 Withmate Edu 加到手機主畫面","Android — 用 Chrome 開啟首頁 → ⋮ → 新增至主畫面","iPhone — 用 Safari 開啟首頁 → 分享 → 加入主畫面","下載圖解指南（PDF）","home-guide-zh.pdf"],"zh-Hans":["将 Withmate Edu 添加到手机主屏幕","Android — 用 Chrome 打开首页 → ⋮ → 添加到主屏幕","iPhone — 用 Safari 打开首页 → 分享 → 添加到主屏幕"]};
   function setLang(lang) {
+    const [guideTitle, android, ios, pdfLabel, pdfPath] = homeGuide[lang] || homeGuide.en;
+    document.getElementById('home-guide-title').textContent = guideTitle;
+    document.getElementById('home-guide-android').textContent = android;
+    document.getElementById('home-guide-ios').textContent = ios;
+    const guidePdf = document.getElementById('home-guide-pdf');
+    guidePdf.hidden = !pdfPath;
+    guidePdf.textContent = pdfLabel || '';
+    if (pdfPath) guidePdf.href = './' + pdfPath;
     renderPricing(lang);
     const t = content[lang];
     activeLang = lang;
