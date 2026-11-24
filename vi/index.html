@@ -69,7 +69,8 @@
     <p>Thầy Jun từng du học ở Trung Quốc và có hơn 8 năm kinh nghiệm với hơn 5.000 buổi dạy tiếng Hàn.</p>
     <section class="trial" id="hoc-thu">
       <h2>Học thử miễn phí 25 phút</h2>
-      <p>Soạn tin nhắn rồi gửi cho người đã giới thiệu lớp để hỏi lịch học thử qua Zoom.</p>
+      <p>Nhắn tin trực tiếp (DM) cho <strong>@withmate__edu</strong> trên Instagram để hỏi lịch học thử qua Zoom.</p>
+      <p><a class="button" href="https://www.instagram.com/withmate__edu/">Nhắn tin trên Instagram</a></p>
       <form id="trial-form">
         <label for="name">Tên của bạn</label>
         <input id="name" autocomplete="name" maxlength="80" required>
@@ -78,7 +79,7 @@
         <button class="button" type="submit">Soạn tin nhắn học thử</button>
       </form>
       <div id="message-area" hidden>
-        <label for="message">Tin nhắn gửi cho người giới thiệu</label>
+        <label for="message">Tin nhắn gửi qua Instagram</label>
         <textarea id="message" rows="5" readonly></textarea>
         <button type="button" class="button" id="copy">Sao chép tin nhắn</button>
       </div>
@@ -100,13 +101,13 @@
       }
       message.value = `Xin chào! Mình muốn tham gia buổi học thử tiếng Hàn miễn phí 25 phút của Withmate Edu.\nTên: ${name}\nThời gian mình có thể tham gia: ${time}`;
       document.querySelector('#message-area').hidden = false;
-      status.textContent = 'Hãy gửi tin nhắn này cho người đã giới thiệu lớp.';
+      status.textContent = 'Hãy gửi tin nhắn này cho Withmate Edu qua Instagram.';
       message.focus();
     });
     document.querySelector('#copy').addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(message.value);
-        status.textContent = 'Đã sao chép. Bạn có thể dán tin nhắn vào ứng dụng nhắn tin.';
+        status.textContent = 'Đã sao chép. Hãy dán tin nhắn vào Instagram DM.';
       } catch {
         message.focus();
         message.select();
